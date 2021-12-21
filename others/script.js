@@ -12,3 +12,5 @@ var araba={
 };
 
 console.log(araba.marka);
+
+
