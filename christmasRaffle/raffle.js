@@ -74,6 +74,7 @@ function startShake(){
         console.log(items[i], items[i+1]);
         items.splice(i,1);
     }
+    document.getElementById("raffle").disabled = true;
 }
 
 
