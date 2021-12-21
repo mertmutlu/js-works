@@ -13,7 +13,8 @@ var items = [];
 
 
 function myFunction(){
-
+    
+    document.getElementById("ekle").disabled = true;
     document.addEventListener('keydown', function(event) {
         if(event.keyCode == 13) {
 
