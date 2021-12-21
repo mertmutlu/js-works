@@ -32,13 +32,7 @@ function myFunction(){
    // document.getElementById("personNumber").innerText=person;
 }
 
-function startShake(){
-    console.log("Shake");
- for(var i=0;i<person;i++){
-   // console.log(items[i]);
-    console.log(i);
- } 
-}
+
 
 /*
 input.addEventListener("keyup", function(event) {
