@@ -11,45 +11,73 @@ function myFunction(){
 var myindex=0;
 var items = [];
 
+
 function myFunction(){
+
+    document.addEventListener('keydown', function(event) {
+        if(event.keyCode == 13) {
+
+           
+
+            var inputVal = document.getElementById("txtname").value;
+    
+            items.push(inputVal);  
+            myindex++;
+        
+            console.log(items,myindex);
+            
+            var x = document.createElement("div");  // Creates a new <div> node
+            x.textContent = inputVal;         // Sets the text content
+            document.body.appendChild(x);  
+            
+            var person = document.createElement("div");  // Creates a new <div> node
+            person.textContent = myindex;         // Sets the text content
+            document.body.appendChild(person);   
+            document.getElementById('txtname').value = '';
+        }
+    });
     
     // Selecting the input element and get its value 
-    var inputVal = document.getElementById("txtname").value;
-    
-    items.push(inputVal);  
-    myindex++;
+ 
 
-    console.log(items,myindex);
-    
-    var x = document.createElement("div");  // Creates a new <div> node
-    x.textContent = inputVal;         // Sets the text content
-    document.body.appendChild(x);  
-    
-    var person = document.createElement("div");  // Creates a new <div> node
-    person.textContent = myindex;         // Sets the text content
-    document.body.appendChild(person);  
+    return items
 
+    
    // document.getElementById("personNumber").innerText=person;
 }
 
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
+
 function startShake(){
     console.log("Shake");
- for(var i=0;i<person;i++){
-   // console.log(items[i]);
-    console.log(i);
- } 
+    shuffle(items);
+    console.log(items);
+
+    for(var i=0;i<items.length;i++){
+        
+        console.log(items[i], items[i+1]);
+        items.splice(i,1);
+    }
 }
 
-/*
-input.addEventListener("keyup", function(event) {
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      document.getElementById("ekle").click();
-     }
-  });
-  */
+
+
 
 
 
