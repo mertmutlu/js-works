@@ -9,9 +9,10 @@ function myFunction(){
 }
 */
 var myindex=0;
+var items = [];
+
 function myFunction(){
     
-    var items = [];
     // Selecting the input element and get its value 
     var inputVal = document.getElementById("txtname").value;
     
@@ -32,7 +33,11 @@ function myFunction(){
 }
 
 function startShake(){
-    console.log(toString(x));
+    console.log("Shake");
+ for(var i=0;i<person;i++){
+   // console.log(items[i]);
+    console.log(i);
+ } 
 }
 
 /*
@@ -45,3 +50,7 @@ input.addEventListener("keyup", function(event) {
      }
   });
   */
+
+
+
+  2
